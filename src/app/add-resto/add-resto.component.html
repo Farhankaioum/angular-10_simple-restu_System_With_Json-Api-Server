@@ -1,1 +1,30 @@
-<p>add-resto works!</p>
+<div class="container">
+    <h2 class="text-info mb-4">Add New Restaurant</h2>
+
+    <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Success!</strong> Data insert successfully!.
+      <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <form [formGroup]="addResto" (ngSubmit)="saveResto()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" formControlName="name"  placeholder="Enter name">
+                   </div>
+                  <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" class="form-control" formControlName="address" placeholder="Address">
+                  </div>
+                  <div class="form-group">
+                      <label>Email</label>
+                      <input type="email" class="form-control" formControlName="email" placeholder="Email">
+                    </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+      </form>
+</div>
